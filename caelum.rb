@@ -265,13 +265,31 @@ var_bool =  3 > 2
 #===========================================#
 #  MÚTIPLOS PARAMETROS                      #
 #===========================================#
-def soma(*numeros)
-    sum = 0
-    numeros.inject(0){|sum, x| sum + x}
-end
+# def imprime(*numeros)
+#     puts numeros
+#     puts numeros.size
+# end
 
-lista_soma = [100, 200, 300]
+# lista_soma = [10, 20, 30]
 
-soma(10,20,30)
-soma(lista_soma)
+# imprime(10,20,30)
+# imprime(lista_soma)
+
+
+#===========================================#
+#  HASHES                                   #
+#===========================================#
+
+# config = Hash.new
+#     config[:porta] = 80
+#     config["ssh"] = false
+#     config["nome"] = caelum.com.br
+
+# puts.config.size
+# puts.config["ssh"]
+
+#===========================================#
+#                                     #
+#===========================================#
+
 
