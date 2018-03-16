@@ -223,5 +223,27 @@ var_bool =  3 > 2
 
 # Pessoa.new(10)
 
+#===========================================#
+#  ATRIBUTOS                                #
+#===========================================#
+class Pessoa
+    def initialize(nome)
+        @nome = nome
+    end
+
+    def nome
+        @nome
+    end
+
+    def nome=(new_nome)
+        @nome = new_nome
+    end
+
+end
+
+p = Pessoa.new("Paulo")
+puts p.nome
+p.nome = "Paulo Sampaio"
+puts p.nome
 
 
