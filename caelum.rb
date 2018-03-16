@@ -226,24 +226,52 @@ var_bool =  3 > 2
 #===========================================#
 #  ATRIBUTOS                                #
 #===========================================#
-class Pessoa
-    def initialize(nome)
-        @nome = nome
-    end
+# class Pessoa
+#     def initialize(nome)
+#         @nome = nome
+#     end
 
-    def nome
-        @nome
-    end
+#     def nome
+#         @nome
+#     end
 
-    def nome=(new_nome)
-        @nome = new_nome
-    end
+#     def nome=(new_nome)
+#         @nome = new_nome
+#     end
 
+# end
+
+# p = Pessoa.new("Paulo")
+# puts p.nome
+# p.nome = "Paulo Sampaio"
+# puts p.nome
+
+#===========================================#
+#  COLEÇÕES                                 #
+#===========================================#
+
+# lista = Array.new
+# lista << "BR-71"
+# lista << "BR-75"
+# lista << "FJ-79"
+
+# puts lista.size
+# puts lista[0]
+# puts lista[2]
+
+# lista2 = [1, 2, "string", :simbolo, /$regex^/]
+# puts lista2
+
+#===========================================#
+#  MÚTIPLOS PARAMETROS                      #
+#===========================================#
+def soma(*numeros)
+    sum = 0
+    numeros.inject(0){|sum, x| sum + x}
 end
 
-p = Pessoa.new("Paulo")
-puts p.nome
-p.nome = "Paulo Sampaio"
-puts p.nome
+lista_soma = [100, 200, 300]
 
+soma(10,20,30)
+soma(lista_soma)
 
