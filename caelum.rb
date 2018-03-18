@@ -283,13 +283,50 @@ var_bool =  3 > 2
 # config = Hash.new
 #     config[:porta] = 80
 #     config["ssh"] = false
-#     config["nome"] = caelum.com.br
+#     config["nome"] = "caelum.com.br"
 
-# puts.config.size
-# puts.config["ssh"]
+# puts config.size
+# puts config[:porta]
+
+
+# def transfere(argumentos)
+#     destino = argumentos[:destino]
+#     data = argumentos[:data]
+#     valor = argumentos[:valor]
+#     puts argumentos
+# end
+
+#[PARAMETRO ATRAVÉS DE HASH]
+# transfere({
+#     destino: 'Paulo',
+#     data: Time.now,
+#     valor: 5000
+# })
 
 #===========================================#
-#                                     #
+#  PROGRAMAÇÃO FUNCIONAL                    #
 #===========================================#
+class Banco
 
+    def initialize(contas)
+        @contas = contas
+    end
 
+    def status(&block)
+        saldo = 0
+        for conta in @contas
+            saldo += conta
+            
+            if block_given?
+                block.call(saldo)
+            end
+        end
+        saldo
+    end
+end
+
+contas = [100,500,150,800,50]
+banco  = Banco.new(contas)
+
+puts banco.status
+banco.status {|saldo_parcial| puts saldo_parcial}
