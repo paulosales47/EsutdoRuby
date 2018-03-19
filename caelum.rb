@@ -304,29 +304,110 @@ var_bool =  3 > 2
 # })
 
 #===========================================#
-#  PROGRAMAÇÃO FUNCIONAL                    #
+#  PROGRAMAÇÃO FUNCIONAL 1                  #
 #===========================================#
-class Banco
+# class Banco
 
-    def initialize(contas)
-        @contas = contas
-    end
+#     def initialize(contas)
+#         @contas = contas
+#     end
 
-    def status(&block)
-        saldo = 0
-        for conta in @contas
-            saldo += conta
+#     def status(&block)
+#         saldo = 0
+#         for conta in @contas
+#             saldo += conta
             
-            if block_given?
-                block.call(saldo)
-            end
-        end
-        saldo
-    end
-end
+#             if block_given?
+#                 block.call(saldo)
+#             end
+#         end
+#         saldo
+#     end
 
-contas = [100,500,150,800,50]
-banco  = Banco.new(contas)
+#     def status2
+#         saldo = 0
+#         for conta in @contas
+#             saldo += conta
+            
+#             if block_given?
+#                 yield(saldo)
+#             end
+#         end
+#         saldo
+#     end
 
-puts banco.status
-banco.status {|saldo_parcial| puts saldo_parcial}
+# end
+
+# contas = [100,500,150,800,50]
+# banco  = Banco.new(contas)
+
+# #puts banco.status2
+# banco.status2 {|saldo_parcial| puts saldo_parcial}
+
+#===========================================#
+#  PROGRAMAÇÃO FUNCIONAL 2                  #
+#===========================================#
+
+# funcionarios = ["guilherme", "sergio", "david"]
+
+# funcionarios_upper = funcionarios.map do |nome|
+#     nome.upcase
+# end
+
+# puts funcionarios_upper
+
+
+#===========================================#
+#  PROGRAMAÇÃO FUNCIONAL 3                  #
+#===========================================#
+# class Restaurante
+
+#     def initialize(contas, nomes_clientes)
+#         @contas = contas
+#         @nomes_clientes = nomes_clientes
+#     end
+
+#     def relatorio
+#         @contas.each do |conta|
+#             yield(conta) 
+#         end
+#     end
+
+#     def padroniza_nome
+#         nomes = []
+#         @nomes_clientes.each do |nome|
+#             nomes << yield(nome)
+#         end
+#        nomes
+#     end
+
+# end
+
+# contas = [75,15,20,30,5,150, 55, 60]
+# nomes = ["Sofia", "Antonio", "carlos"]
+
+# restaurante = Restaurante.new(contas, nomes)
+
+#[CONTAS ACIMA DE 30]
+# restaurante.relatorio do |conta|
+#     puts conta if(conta > 30)
+# end
+
+#[CONTAS ACIMA DE 70]
+# restaurante.relatorio do |conta|
+#     puts conta if(conta > 70)
+# end
+
+#[APLICA DESCONTO DE 5%]
+# restaurante.relatorio do |conta|
+#     conta *= 0.95
+#     puts conta 
+# end
+
+#[RETORNO]
+# nomes_up = restaurante.padroniza_nome {|nome | nome.upcase }
+# nomes_down = restaurante.padroniza_nome{|nome| nome.downcase}
+
+# puts nomes_up
+# puts nomes_down
+
