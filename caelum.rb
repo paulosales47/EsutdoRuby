@@ -453,20 +453,30 @@ var_bool =  3 > 2
 # end
 
 #[THROW E CATCH]
-def pesquisa_banco(nome)
-    if(nome.size < 10)
-        throw :nome_invalido, "Nome invalido, digite novamente"
-    end
+# def pesquisa_banco(nome)
+#     if(nome.size < 10)
+#         throw :nome_invalido, "Nome invalido, digite novamente"
+#     end
 
-    "cliente #{nome}"
+#     "cliente #{nome}"
+# end
+
+# def executa_pesquisa(nome)
+#     catch :nome_invalido do 
+#         cliente = pesquisa_banco(nome)
+#         return cliente
+#     end
+# end
+
+# puts executa_pesquisa("Luiz")
+# puts executa_pesquisa("Paulo Henrique")
+
+
+#===========================================#
+#  REQUIRE                                  #
+#===========================================#
+
+require 'net/http'
+Net::HTTP.start('www.bbc.com', 80 ) do |http|
+print( http.get( '/' ).body )
 end
-
-def executa_pesquisa(nome)
-    catch :nome_invalido do 
-        cliente = pesquisa_banco(nome)
-        return cliente
-    end
-end
-
-puts executa_pesquisa("luiz")
-puts executa_pesquisa("Paulo Henrique")
