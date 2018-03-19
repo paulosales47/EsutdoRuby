@@ -476,7 +476,47 @@ var_bool =  3 > 2
 #  REQUIRE                                  #
 #===========================================#
 
-require 'net/http'
-Net::HTTP.start('www.bbc.com', 80 ) do |http|
-print( http.get( '/' ).body )
-end
+# require 'net/http'
+# Net::HTTP.start('www.bbc.com', 80 ) do |http|
+# print( http.get( '/' ).body )
+# end
+
+#===========================================#
+#  SINGLETON                                #
+#===========================================#
+
+# class Pessoa
+#     def fala
+#         puts "oi"
+#     end
+# end
+
+# p1 = Pessoa.new
+# p2 = Pessoa.new
+
+#[MÉTODO SINGLETON]
+# def p1.anda
+#     puts "Andando"
+# end
+
+# p1.fala
+# p2.fala
+
+# p1.anda
+#[ERRO]
+#p2.anda
+
+#[MÉTODO DA CLASSE]
+# class Pessoa
+#     class << self
+#         def corre
+#             puts "Correndo"
+#         end
+#     end
+# end
+
+# Pessoa.corre
+
+#[ERRO]
+# p3 = Pessoa.new
+# p3.corre
