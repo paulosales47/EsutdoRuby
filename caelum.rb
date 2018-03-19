@@ -724,4 +724,19 @@
 # puts restaurante.restaurante_cadastrado?(lista_restaurantes)
 # puts restaurante.restaurante_cadastrado?(lista_restaurantes2)
 
+#===========================================#
+# MODIFICADORES DE VISIBILIDADE             #
+#===========================================#
+class Banco
 
+    private
+    
+    def manipula_contas(*contas)
+    end
+
+    public 
+    
+    def exibe_extrato(cliente)
+    end
+
+end
