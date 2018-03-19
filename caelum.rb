@@ -1,17 +1,17 @@
 #===========================================#
-#               Impressão                   #
+#               IMPRESSÃO                   #
 #===========================================#
 #puts "A"
 #print "A"
 #p "A"
 
 #===========================================#
-#           Inserção de valores             #
+#           INSERÇÃO DE VALORES             #
 #===========================================#
 #nome = gets
 
 #===========================================#
-#         Concatenação de strings           #
+#         CONCATENAÇÃO DE STRINGS           #
 #===========================================#
 #[mesma instancia]
 #mensagem = "A" << "B"
@@ -22,7 +22,7 @@
 #puts mensagem2
 
 #===========================================#
-#  Capitalize(primeira letra em maiusculo)  #
+#  CAPITALIZE(PRIMEIRA LETRA EM MAIUSCULO)  #
 #===========================================#
 #nome = "teste"
 
@@ -34,7 +34,7 @@
 #puts nome
 
 #===========================================#
-#  Tipo da variavel                         #
+#  TIPO DA VARIAVEL                         #
 #===========================================#
 
 #puts 1.class #Fixnum
@@ -43,7 +43,7 @@
 #puts 1.0.class #Float
 
 #===========================================#
-#  Ranges                                   #
+#  RANGES                                   #
 #===========================================#
 
 #[inclui o ultimo]
@@ -59,18 +59,18 @@
 #puts range2
 
 #===========================================#
-#  Simbolos                                 #
+#  SIMBOLOS                                 #
 #===========================================#
 #puts :simbolo
 #puts :simbolo.class
 
 
 #===========================================#
-#  Estruturas de controle                   #
+#  ESTRUTURAS DE CONTROLE                   #
 #===========================================#
 
 #[IF]
-var_bool =  3 > 2
+#var_bool =  3 > 2
 
 # if(var_bool)
 #     puts "Verdadeiro"
@@ -95,7 +95,7 @@ var_bool =  3 > 2
 # end
 
 #===========================================#
-#  Laço de repetição                        #
+#  LAÇO DE REPETIÇÃO                        #
 #===========================================#
 #[FOR]
 
@@ -631,34 +631,97 @@ var_bool =  3 > 2
 # puts Calendario::HORA_ATUAL
 
 #[MIXINS]
-module OparacoesBasicas
+# module OparacoesBasicas
 
-    def soma(num_a, num_b)
-        num_a + num_b
-    end
+#     def soma(num_a, num_b)
+#         num_a + num_b
+#     end
 
-    def subtracao(num_a, num_b)
-        num_a - num_b
-    end
+#     def subtracao(num_a, num_b)
+#         num_a - num_b
+#     end
 
-end
+# end
 
-class Calculadora
+# class Calculadora
 
-    include OparacoesBasicas
+#     include OparacoesBasicas
 
-    def Mutiplicacao(num_a, num_b)
-        num_a * num_b
-    end
+#     def Mutiplicacao(num_a, num_b)
+#         num_a * num_b
+#     end
 
-end
+# end
 
-calc = Calculadora.new
-puts calc.soma(10,20)
+# calc = Calculadora.new
+# puts calc.soma(10,20)
 
 #[respond_to? RETORNA VERDADEIRO SE OBJ RESPONDE AO MÉTODO DADO]
-puts calc.respond_to? :subtracao
+#puts calc.respond_to? :subtracao
 
 
+#===========================================#
+# METAPROGRAMAÇÃO                           #
+#===========================================#
+# class Aluno
+# end
+
+# class Professor
+#     def ensina(aluno)
+#         def aluno.escreve
+#             "Escrevendo"
+#         end
+#     end
+# end
+
+# aluno_a = Aluno.new
+# puts aluno_a.respond_to? :escreve
+
+# professor_a = Professor.new
+# professor_a.ensina(aluno_a)
+# puts aluno_a.respond_to? :escreve
+
+#[attr_accessor (Gera métodos de acesso para atributo)]
+# class Pessoa
+#     attr_accessor :nome
+# end
+
+# p = Pessoa.new
+# p.nome = "Paulo"
+# puts p.nome
+
+
+#[TESTE]
+# class Restaurante
+
+#     attr_reader :nome
+
+#     def initialize(nome)
+#         @nome = nome
+#     end
+
+#     def nome=(nome)
+#         @nome = nome
+#     end
+    
+#     def adiciona_pesquisa
+#         def restaurante_cadastrado?(restaurantes)
+#             restaurantes.each do |r|
+#                 return true if(r.eql? @nome)
+#             end
+#             return false
+#         end
+#     end
+
+# end
+
+
+# lista_restaurantes = ["ABD", "AVA", "ABA", "CDB", "ABC"]
+# lista_restaurantes2 = ["ABD", "AVA", "ABA", "CDB", "ABF", "CFG"]
+# restaurante = Restaurante.new("ABC")
+
+# restaurante.adiciona_pesquisa()
+# puts restaurante.restaurante_cadastrado?(lista_restaurantes)
+# puts restaurante.restaurante_cadastrado?(lista_restaurantes2)
 
 
