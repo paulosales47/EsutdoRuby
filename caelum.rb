@@ -411,3 +411,62 @@ var_bool =  3 > 2
 # puts nomes_up
 # puts nomes_down
 
+#===========================================#
+#  EXCEPTIONS                               #
+#===========================================#
+
+#[TRATANDO EXCEÇÃO]
+# print "Informe um numero: "
+# numero = gets.to_i
+
+# begin
+#     resultado = 100 / numero
+# rescue
+#     puts "O valor informado é invalido"
+#     exit
+# end
+
+# puts "100 / #{numero} = #{resultado}"
+
+#[LANÇANDO EXCEÇÃO]
+# def verifica_idade(idade)
+#     unless idade > 18
+#         raise "Não permitido"
+#     end
+# end
+
+# verifica_idade(17)
+
+#[HERDANDO DE EXCEPTION]
+# class IdadeInsuficienteException < Exception
+# end
+
+# def verifica_idade(idade)
+#         raise IdadeInsuficienteException, 
+#         "Não Permitido" unless idade > 18
+# end
+
+# begin
+#     verifica_idade(50)
+# rescue IdadeInsuficienteException => e
+#     puts "Foi lançada a exception: #{e}"
+# end
+
+#[THROW E CATCH]
+def pesquisa_banco(nome)
+    if(nome.size < 10)
+        throw :nome_invalido, "Nome invalido, digite novamente"
+    end
+
+    "cliente #{nome}"
+end
+
+def executa_pesquisa(nome)
+    catch :nome_invalido do 
+        cliente = pesquisa_banco(nome)
+        return cliente
+    end
+end
+
+puts executa_pesquisa("luiz")
+puts executa_pesquisa("Paulo Henrique")
