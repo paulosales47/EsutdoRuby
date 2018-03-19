@@ -520,3 +520,22 @@ var_bool =  3 > 2
 #[ERRO]
 # p3 = Pessoa.new
 # p3.corre
+
+#===========================================#
+#  CONVENÇÕES                               #
+#===========================================#
+
+#[MÉTODOS BOLEANOS COSTUMAM TERMINAR EM COM SINAL DE INTERROGAÇÃO (?)]
+# def numero_positivo?(numero)
+#     return false unless(numero > 0)
+#     return true
+# end
+
+# puts numero_positivo?(-1)
+
+#[MÉTODOS QUE TEM EFEITO COLATERAL (ALTERAM O ESTADO DO OBJETO, OU QUE COSTUMEM LANÇAR EXCEÇÕES) GERALMENTE TERMINAM COM ! (BANG)]
+#[NA DEFINIÇÃO DE MÉTODOS PROCURE SEMPRE USAR PARÊNTESES]
+#[NOME DE VARIÁVEIS E MÉTODOS SÃO SEMPRE MINUSCULOS E SEPARADOS POR _ (UNDERSCORE)]
+#[VARIÁVEIS COM NOME MAIÚSCULO SÃO SEMPRE CONSTANTES]
+#[PARA NOMES DE CLASSES UTILIZE AS REGRAS DE CamelCase]
+
