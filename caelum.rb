@@ -539,3 +539,64 @@ var_bool =  3 > 2
 #[VARIÁVEIS COM NOME MAIÚSCULO SÃO SEMPRE CONSTANTES]
 #[PARA NOMES DE CLASSES UTILIZE AS REGRAS DE CamelCase]
 
+#===========================================#
+# HERANÇA E POLIMORFISMO                    #
+#===========================================#
+#[HERANÇA]
+# class Animal
+#     def come
+#         "Comendo"
+#     end
+# end
+
+# class Pato < Animal
+#     def quack
+#         "Quack"
+#     end
+# end
+
+# pato = Pato.new
+# puts pato.come
+
+#[POLIMORFISMO]
+# class Livro
+#     def leitura
+#         "Lendo um livro"
+#     end
+# end
+
+# class Revista 
+#     def leitura
+#         "Lendo um revista"
+#     end
+# end
+
+# class Leitor
+#     def ler(livro)
+#         livro.leitura
+#     end
+# end
+
+# livro = Livro.new
+# revista = Revista.new
+# leitor = Leitor.new
+
+# puts leitor.ler(livro)
+# puts leitor.ler(revista)
+
+#[SOBRESCRITA DE METODO DA CLASSE BASE E USO DO SUPER]
+# class Alimento
+#     def info
+#         print "Alimento: "
+#     end
+# end
+
+# class Arroz < Alimento
+#     def info
+#         super() #[ENVIA UMA MENSAGEM AO PAI DO OBJETO ATUAL, PEDINDO QUE INVOQUE UM MÉTODO DO MESMO NOME QUE O MÉTODO QUE INVOCA SUPER]
+#         puts "Arroz"
+#     end
+# end
+
+# arroz = Arroz.new
+# arroz.info()
