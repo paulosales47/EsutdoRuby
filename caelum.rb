@@ -600,3 +600,65 @@ var_bool =  3 > 2
 
 # arroz = Arroz.new
 # arroz.info()
+
+#===========================================#
+# MÓDULOS (Semelhante a namespaces)         #
+#===========================================#
+
+# module Contas
+    
+#     class Corrente
+#     end
+
+#     class Poupanca
+#     end
+
+#     class Salario
+#     end
+
+# end
+
+# conta_salario = Contas::Salario.new
+
+#[ERRO]
+#conta_corrente = Corrente.new
+
+#[ACESSO A VALORES]
+# module Calendario
+#     HORA_ATUAL = Time.now
+# end
+
+# puts Calendario::HORA_ATUAL
+
+#[MIXINS]
+module OparacoesBasicas
+
+    def soma(num_a, num_b)
+        num_a + num_b
+    end
+
+    def subtracao(num_a, num_b)
+        num_a - num_b
+    end
+
+end
+
+class Calculadora
+
+    include OparacoesBasicas
+
+    def Mutiplicacao(num_a, num_b)
+        num_a * num_b
+    end
+
+end
+
+calc = Calculadora.new
+puts calc.soma(10,20)
+
+#[respond_to? RETORNA VERDADEIRO SE OBJ RESPONDE AO MÉTODO DADO]
+puts calc.respond_to? :subtracao
+
+
+
+
